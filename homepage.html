@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="custom-cursor"></div>
+  <nav>
+    <div class="menu-item">
+      <ul>
+        <li><a href="materi.html">Materi</a></li>
+        <li><a href="latihansoal.html">Latihan Soal</a></li>
+        <li><a href="contohsoal.html">Contoh Soal</a></li>
+        <li><a href="rumus.html">Rumus</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+  <div class="container">
+    <div class="interactive-grid"></div>
+    <div class="floating-shapes"></div>
+    <h1 class="interactive-text">Termokimia</h1>
+    <div class="project-preview"></div>
+  </div>
+
+  <script>
+    // Custom cursor
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.custom-cursor');
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Interactive shapes
+    const shapes = document.querySelector('.floating-shapes');
+    for (let i = 0; i < 20; i++) {
+      const shape = document.createElement('div');
+      shape.className = 'shape';
+      shape.style.width = Math.random() * 100 + 50 + 'px';
+      shape.style.height = shape.style.width;
+      shape.style.left = Math.random() * 100 + '%';
+      shape.style.top = Math.random() * 100 + '%';
+      shapes.appendChild(shape);
+    }
+
+    // Mouse interaction with shapes
+    document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.shape');
+      shapes.forEach(shape => {
+        const rect = shape.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = e.clientX - centerX;
+        const deltaY = e.clientY - centerY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const maxDistance = 300;
+        
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance;
+          shape.style.transform = `translate(${-deltaX * force * 0.2}px, ${-deltaY * force * 0.2}px)`;
+        } else {
+          shape.style.transform = 'translate(0, 0)';
+        }
+      });
+    });
+
+    // Interactive grid
+    const grid = document.querySelector('.interactive-grid');
+    for (let i = 0; i < 400; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      grid.appendChild(cell);
+    }
+
+    // Text interaction
+    const text = document.querySelector('.interactive-text');
+    text.addEventListener('mousemove', (e) => {
+      const rect = text.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      text.style.transform = `translate(${x * 0.02}px, ${y * 0.02}px)`;
+    });
+
+    text.addEventListener('mouseleave', () => {
+      text.style.transform = 'translate(0, 0)';
+    });
+
+    // Menu interaction
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('mouseenter', (e) => {
+        document.querySelector('.custom-cursor').style.transform = 'scale(2)';
+      });
+
+      item.addEventListener('mouseleave', () => {
+        document.querySelector('.custom-cursor').style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
+
+<nav 

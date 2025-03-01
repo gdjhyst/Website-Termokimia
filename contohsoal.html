@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #1e90ff, #4169e1);
+            min-height: 100vh;
+            animation: gradientBG 10s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar.closed {
+            left: -250px;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .menu-item {
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: 0.3s;
+        }
+
+        .content.full {
+            margin-left: 0;
+        }
+
+        .text-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    
+    <div class="sidebar">
+        <div class="menu-item"><a href="homepage.html">Home</a></div>
+        <div class="menu-item"><a href="latihansoal.html">Latihan soal</a></div>
+        <div class="menu-item"><a href=Rumus.html>Rumus</a></div>
+        <div class="menu-item"><a href="materi.html">Materi</a></div>
+    </div>
+
+    <div class="content">
+        <div class="text-box">
+            <h1>Contoh Soal Termokimia</h1>
+            <p>Terdapat beberapa contoh soal yang bisa anda pelajari di rumah</p>
+            <ul>
+                <hr><h4>1.Perubahan Entalpi</h4></hr>
+                <li><i>Soal: Sebuah reaksi kimia menghasilkan 150 kJ energi. Jika entalpi reaktan adalah 200 kJ, berapa perubahan entalpi (ΔH) dari reaksi tersebut?</i></li>
+                <p><h5>Penyelesaian:</h5>
+                    ΔH = H_produk - H_reaktan = 150 kJ - 200 kJ = -50 kJ
+                    Jadi, ΔH = -50 kJ (reaksi eksotermik).</p>
+
+                <hr><h4>2.Hukum Hess</h4></hr>
+                <li><i>Soal: Reaksi A → B memiliki ΔH = -100 kJ. Reaksi B → C memiliki ΔH = -50 kJ. Hitung ΔH untuk reaksi A → C.</i></li>
+                <p><h5>Penyelesaian:</h5>
+                    ΔH_total = ΣΔH_reaksi = ΔH_A → B + ΔH_B → C = -100 kJ + (-50 kJ) = -150 kJ
+                    Jadi, ΔH_A → C = -150 kJ.</p>
+
+                <hr><h4>3.Energi Bebas Gipss</h4></hr>                
+                <li><i>Soal: Sebuah reaksi memiliki ΔH = -40 kJ dan ΔS = 100 J/K pada suhu 298 K. Hitung ΔG untuk reaksi tersebut.</i></li>
+                <p><h5>Penyelesaian:</h5>
+                    ΔG = ΔH - TΔS = -40 kJ - (298 K × 100 J/K) = -40 kJ - 29.8 kJ = -69.8 kJ
+                    Jadi, ΔG = -69.8 kJ.</p>
+
+                <hr><h4>4.Kapasitas Kalor</h4></hr>
+                <li><i>Soal: Sebuah zat memiliki kapasitas kalor 4 J/g°C. Jika 50 gram zat tersebut mengalami perubahan suhu dari 25°C menjadi 75°C, berapa banyak panas (q) yang diserap?</i></li>
+                <p><h5>Penyelesaian:</h5>
+                    q = C × ΔT = 4 J/g°C × 50 g × (75°C - 25°C) = 4 J/g°C × 50 g × 50°C = 10,000 J
+
+                <hr><h4>5.Persamaan Gas Ideal</h4></hr>
+                <li><i>soal:Sebuah gas ideal memiliki tekanan 2 atm, volume 10 L, dan jumlah mol 1 mol. Hitung suhu (T) gas tersebut.</i></li>
+                <p><h5>Penyelesaian:</h5>
+                    PV = nRT
+                    2 atm × 10 L = 1 mol × R × T
+                    20 L atm = R × T
+                    T = 20 L atm / R
+                    T = 20 L atm / (0.0821 L atm/mol K) = 243.4 K</p>
+            </ul>
+
+
+
+
+                
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('closed');
+            document.querySelector('.content').classList.toggle('full');
+        }
+    </script>
+</body>
+</html>

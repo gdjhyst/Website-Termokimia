@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "arial", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #1e90ff, #4169e1);
+            min-height: 100vh;
+            animation: gradientBG 10s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar.closed {
+            left: -250px;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .menu-item {
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: 0.3s;
+        }
+
+        .content.full {
+            margin-left: 0;
+        }
+
+        .text-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    
+    <div class="sidebar">
+        <div class="menu-item"><a href=homepage.html>Home</a></div>
+        <div class="menu-item"><a href="latihansoal.html">Latihan soal</a></div>
+        <div class="menu-item"><a href="contohsoal.html">Contoh Soal</a></div>
+        <div class="menu-item"><a href=Rumus.html>Rumus</a></div>
+    </div>
+
+    <div class="content">
+        <div class="text-box">
+            <h1>Termokimia</h1>
+            <p>Termokimia adalah cabang ilmu kimia yang mempelajari hubungan antara energi, terutama dalam bentuk panas, dan reaksi kimia. Fokus utama dari termokimia adalah bagaimana energi ditransfer selama reaksi kimia dan perubahan fisik, serta bagaimana energi ini mempengaruhi sifat dan perilaku zat.</p>
+
+            <hr><h2>Penerapan Termokimia dalam kehidupan sehari-hari</h2></hr>
+            <p><b><h3>1. Memasak Makanan</h3></b></p>
+                Ketika kita memasak makanan, reaksi kimia terjadi yang melibatkan perubahan energi. Misalnya, saat kita merebus air, energi panas ditransfer ke air, menyebabkan molekul air bergerak lebih cepat dan akhirnya mendidih. Proses ini melibatkan perubahan entalpi.</p>
+            <p><br><h3>2. Pembakaran Bahan Bakar</h3></p>
+                Pembakaran bahan bakar seperti bensin atau gas alam dalam mesin kendaraan adalah contoh reaksi eksotermik. Energi yang dilepaskan selama pembakaran digunakan untuk menggerakkan kendaraan. Reaksi ini juga menghasilkan gas buang yang berkontribusi pada polusi udara.</p>
+            <p><br><h3>3. Pendinginan dengan Es</h3></p>
+                Ketika es mencair, ia menyerap panas dari lingkungan sekitarnya. Proses ini adalah contoh dari perubahan entalpi positif, di mana energi diperlukan untuk mengubah es menjadi air. Ini adalah prinsip dasar di balik pendinginan dengan es dalam minuman.</p>
+            <p><br><h3>4. Reaksi Kimia dalam Penyimpanan Energi</h3></p>
+                Baterai menyimpan energi kimia yang dapat diubah menjadi energi listrik saat digunakan. Proses ini melibatkan reaksi redoks yang menghasilkan energi. Contohnya adalah baterai lithium-ion yang digunakan dalam ponsel dan laptop.</p>
+            <p><br><h3>5. Proses Fotosintesis</h3></p>
+                Fotosintesis adalah proses di mana tumbuhan mengubah energi matahari menjadi energi kimia dalam bentuk glukosa. Proses ini melibatkan reaksi kimia yang menyerap energi, dan merupakan contoh penting dari termokimia dalam ekosistem.</p>
+
+            <hr><h2>Jenis Sistem Termokimia</h2></hr>
+            <p>Ada dua jenis sistem termokimia yang umum digunakan dalam studi termokimia, yaitu sistem terbuka dan sistem tertutup. Sistem terbuka adalah sistem di mana energi dapat ditransfer antara sistem dan lingkungan sekitarnya, sedangkan sistem tertutup adalah sistem di mana energi tidak dapat ditransfer antara sistem dan lingkungan.</p>
+            <p><b><h4>Contoh Sistem Terbuka:</p></b></h4>
+            <p>Reaksi kimia yang terjadi di dalam bejana terbuka, di mana panas dapat ditransfer antara reaksi dan lingkungan sekitarnya.</p>
+            <p><b><h4>Contoh Sistem Tertutup:</p></b></h4>
+            <p>Reaksi kimia yang terjadi di dalam termos, di mana panas tidak dapat ditransfer antara reaksi dan lingkungan sekitarnya.</p>
+
+            <hr><h2>Reaksi Eksoterm dan Endoterm dalam Termokimia</h2></hr>
+            <p><h3>1.Reaksi Eksoterm</h3></p>
+                <p>Reaksi eksoterm adalah reaksi kimia yang melepaskan energi panas ke lingkungan sekitarnya. Contoh reaksi eksoterm adalah pembakaran kayu, di mana energi panas dilepaskan dalam bentuk api dan asap.</p>
+            <P><b><h5>Karakteristik</h5></b></P>  
+                <p>- Perubahan entalpi negatif</p>
+                <p>- Panas dilepaskan ke lingkungan</p>
+                <p>- Energi potensial produk lebih rendah dari reaktan</p>
+                <img src="reaksi-eksoterm.png" alt="Reaksi Eksoterm" width="300" height="200">
+                
+            <p><br><h3>2.Reaksi Endoterm</h3></p>
+                <p>Reaksi endoterm adalah reaksi kimia yang memerlukan energi panas dari lingkungan sekitarnya. Contoh reaksi endoterm adalah penguapan air, di mana energi panas diperlukan untuk mengubah air menjadi uap.</p>
+            <P><b><h5>Karakteristik</h5></b></P>
+                <p>- Perubahan entalpi positif</p>
+                <p>- Panas diserap dari lingkungan</p>
+                <p>- Energi potensial produk lebih tinggi dari reaktan</p>
+                <img src="reaksi-endoterm.jpg" alt="Reaksi Endoterm" width="300" height="200">
+
+            <hr><h2>Perubahan Entalpi dalam Keadaan Standar</h2></hr>
+                <p><h3>1.Perubahan Entalpi Pembentukan Standar (ΔH°f)</h3></p>
+                <p>Perubahan entalpi pembentukan standar (ΔH°f) adalah perubahan entalpi yang terjadi saat satu mol senyawa terbentuk dari unsur-unsur konstituennya dalam keadaan standar. Nilai ΔH°f digunakan untuk menghitung perubahan entalpi reaksi.</p>
+                <p><b><h4>Contoh Reaksi Pembentukan Standar:</h4></b></p>
+                <p>2H2(g) + O2(g) → 2H2O(l) ΔH = -572 kJ/mol</p>
+                <p>CH4(g) + 2O2(g) → CO2(g) + 2H2O(l) ΔH = -890 kJ/mol</p>
+
+                <p><br><h3>2.Perubahan Entalpi Penguraian Standar</h3></p>
+                <p>Perubahan entalpi penguraian standar (ΔH°d) adalah perubahan entalpi yang terjadi saat satu mol senyawa terurai menjadi unsur-unsurnya dalam keadaan standar. Nilai ΔH°d dapat digunakan untuk menghitung perubahan entalpi reaksi.</p>
+                <p><b><h4>Contoh Reaksi Penguraian Standar:</h4></b></p>
+                <p>2H2O(l) → 2H2(g) + O2(g) ΔH = 572 kJ/mol</p>
+                <p>CO2(g) + 2H2O(l) → CH4(g) + 2O2(g) ΔH = 890 kJ/mol</p>
+
+                <p><br><h3>3.Perubahan Entalpi Pembakaran Standar</h3></p>
+                <p>Perubahan entalpi pembakaran standar (ΔH°c) adalah perubahan entalpi yang terjadi saat satu mol senyawa terbakar sempurna dalam keadaan standar. Nilai ΔH°c dapat digunakan untuk menghitung perubahan entalpi reaksi.</p>
+                <p><b><h4>Contoh Reaksi Pembakaran Standar:</h4></b></p>
+                <p>CH4(g) + 2O2(g) → CO2(g) + 2H2O(l) ΔH = -890 kJ/mol</p>
+                <p>C2H5OH(l) + 3O2(g) → 2CO2(g) + 3H2O(l) ΔH = -1367 kJ/mol</p>
+
+                <p><br><h3>4.Perubahan Entalpi Pelarutan Standar</h3></p>
+                <p>Perubahan entalpi pelarutan standar (ΔH°s) adalah perubahan entalpi yang terjadi saat satu mol senyawa terlarut dalam jumlah berlebihan air dalam keadaan standar. Nilai ΔH°s dapat digunakan untuk menghitung perubahan entalpi reaksi.</p>
+                <p><b><h4>Contoh Reaksi Pelarutan Standar:</h4></b></p>
+                <p>NaCl(s) → Na+(aq) + Cl-(aq) ΔH = 411 kJ/mol</p>
+                <p>CaCl2(s) → Ca2+(aq) + 2Cl-(aq) ΔH = 815 kJ/mol</p>
+
+            
+                
+
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('closed');
+            document.querySelector('.content').classList.toggle('full');
+        }
+    </script>
+</body>
+</html>

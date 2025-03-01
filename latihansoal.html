@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #1e90ff, #4169e1);
+            min-height: 100vh;
+            animation: gradientBG 10s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar.closed {
+            left: -250px;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .menu-item {
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: 0.3s;
+        }
+
+        .content.full {
+            margin-left: 0;
+        }
+
+        .text-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    
+    <div class="sidebar">
+        <div class="menu-item"><a href="homepage.html">Home</a></div>
+        <div class="menu-item"><a href=Rumus.html>Rumus</a></div>
+        <div class="menu-item"><a href="contohsoal.html">Contoh Soal</a></div>
+        <div class="menu-item"><a href="materi.html">Materi</a></div>
+    </div>
+
+    <div class="content">
+        <div class="text-box">
+            <h1>Latihan Soal Termokimia</h1>
+            <p>Terdapat beberapa latihan soal yang bisa anda kerjakan di rumah</p>
+            <ul>
+                <hr><h4>1.Perubahan Entalpi</h4></hr>
+                <li><i>Tentukan perubahan entalpi pembentukan standar (ΔHf°) dari CH4(g) jika diketahui:
+                    C(s) + O2(g) → CO2(g)         ΔH = -394 kJ/mol
+                    2H2(g) + O2(g) → 2H2O(l)      ΔH = -572 kJ/mol
+                    CH4(g) + 2O2(g) → CO2(g) + 2H2O(l)   ΔH = -890 kJ/mol</i></li>
+
+                <hr><h4>2.Hukum Hess</h4></hr>
+                <li><i>Tentukan perubahan entalpi pembentukan standar (ΔHf°) dari CH4(g) jika diketahui:
+                    C(s) + O2(g) → CO2(g)         ΔH = -394 kJ/mol
+                    2H2(g) + O2(g) → 2H2O(l)      ΔH = -572 kJ/mol
+                    CH4(g) + 2O2(g) → CO2(g) + 2H2O(l)   ΔH = -890 kJ/mol</i></li>
+
+                <hr><h4>3.Energi Bebas Gipss</h4></hr>                
+                <li><i>Pada suhu 25°C, suatu reaksi memiliki ΔH = -92 kJ dan ΔS = -156 J/K.
+                    Tentukan:
+                    <p>a.Nilai ΔG pada suhu tersebut</p>
+                    b.Apakah reaksi tersebut spontan?</i></li>
+
+                <hr><h4>4.Kapasitas Kalor</h4></hr>
+                <li><i>Sebuah logam bermassa 50 gram dipanaskan dari 25°C menjadi 75°C. Jika kalor jenis logam tersebut adalah 0,385 J/g°C, hitunglah:
+                    <p>a. Kapasitas kalor logam tersebut</p>
+                    b. Kalor yang dibutuhkan untuk pemanasan logam tersebut</i></li>
+                
+
+                <hr><h4>5.Persamaan Gas Ideal</h4></hr>
+                <li><i>Gas oksigen sebanyak 3,2 gram berada dalam wadah bervolume 5 liter pada suhu 27°C. Hitunglah tekanan gas tersebut! (Mr O2 = 32, R = 0,082 L.atm/mol.K)</i></li>
+            </ul>
+
+                
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('closed');
+            document.querySelector('.content').classList.toggle('full');
+        }
+    </script>
+</body>
+</html>
